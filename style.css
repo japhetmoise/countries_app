@@ -1,0 +1,65 @@
+body{
+    margin: 20px 30px;
+}
+.footer{
+    position: fixed;
+    bottom: 5px;
+    width: 96%;
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+}
+.head{
+    padding-top: 20px;
+    background-image: url(./images/map.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 95%;
+    height: 100px;
+    border-bottom: 6px solid gray;
+    
+}
+.headtext{
+    margin: auto;
+    background-color: cyan;
+    color: #ff4500;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+}
+.footer>a{
+    text-decoration-line: none;
+    color: cyan;
+}
+.section{
+    height: 500px;
+}
+.left{
+    float: left;
+    background-image: linear-gradient(120deg,rgb(180, 170, 170),#d5d7d8,#dcdca1);
+    width: 200px;
+    height:350px ;
+}
+.right{
+    margin-left: 30px;
+    float: left;
+    width: 520px;
+}
+table{
+    width: 500px;
+}
+table ,td{
+    border-collapse: collapse;
+    border: 1px solid blue;
+}
+td>img{
+    width: 30px;
+    height: 20px;
+}
+td:nth-child(5){
+    white-space: nowrap;
+    width: 50px; 
+    overflow: hidden;
+    text-overflow: "----"; 
+   
+}
