@@ -18,10 +18,30 @@
 </div>
 <div class="section">
   <div class="left">
-yes
+    <div>
+    <input type="text" name="" class="searchInput" placeholder="country name">
+    <input type="button" value="Search" class="searchButton" onclick="displaysingle();">
+  </div>
+  <div>
+    <ul>
+      <li ><b>name:</b><span id="name"></span></li>
+      <li><b>Capital City:</b><span id="Capital"></span></li>
+      <li><b>Languages:</b><span id="languages"></span></li>
+      <li><b>Flag:</b><image id="flag"></image></li>
+      <li><b>Population:</b><span id="Population"></span></li>
+      <li><b>Region:</b><span id="Region"></span></li>
+      <li><b>Calling Code:</b><span id="CallingCode"></span></li>      
+      <li><b>TLD:</b><span id="TLD"></span></li>
+      <li><b>currencies:</b><span id="currency"></span></li>
+      <li><b>Neighbouring countries:</b><span id="Neighbour"></span></li>
+    </ul>
+  </div>
   </div>
   <div class="right">
-    <table>
+    <select id="selectRegion" onclick="displayRegion();">      
+      <script>setregion();</script>
+    </select>    
+    <table id="all">
       <thead>
           <tr>
               <th>Name</th>
@@ -38,14 +58,37 @@ yes
       </thead>
       <tbody class="countries">
          <script>
-          DisplayData();
+         DisplayData();
          </script> 
       </tbody>
   </table>
-  </div>
+ 
+<!--Table by regions-->
+<table id="RegionTable">
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Flag</th>
+          <th>Polpulation</th>
+          <th>Area</th>
+          <th>Capital</th>
+          <th>languages</th>
+          <th>TLD Code</th>
+          <th>Currencies</th>
+          <th>Calling code</th>
+          
+          </tr>
+  </thead>
+  <tbody class="regions">
+     <script>
+     DisplayRegion();
+     </script> 
+  </tbody>
+</table>
+
+  
 </div>
-  
-  
+</div>  
   <div class="footer"> 
     copyright &copy; 
      2023

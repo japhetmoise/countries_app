@@ -39,22 +39,27 @@ body{
     background-image: linear-gradient(120deg,rgb(180, 170, 170),#d5d7d8,#dcdca1);
     width: 200px;
     height:350px ;
+    padding: 20px;
 }
 .right{
+    overflow: scroll;
     margin-left: 30px;
     float: left;
-    width: 520px;
+    width: 1000px;
+    height: 400px;
+    padding-bottom: 60px;
+    bottom: 30px; ;
 }
 table{
-    width: 500px;
+    width: 95%;
 }
 table ,td{
     border-collapse: collapse;
-    border: 1px solid blue;
+    border: 0px solid blue;
 }
 td>img{
-    width: 30px;
-    height: 20px;
+    width: 80px;
+    height: 30px;
 }
 td:nth-child(5){
     white-space: nowrap;
@@ -63,3 +68,50 @@ td:nth-child(5){
     text-overflow: "----"; 
    
 }
+.searchInput{
+width:100px;
+margin: 0px;
+border: 0px;
+}
+.searchButton{
+    margin:0px;
+    border-collapse: collapse;
+    width: auto;
+    border: 0px;
+    border-radius: 20px;
+    font-size: larger;
+    background-image: linear-gradient(60deg, rgb(73, 73, 225), rgb(166, 166, 226), rgb(16, 205, 192));
+    color: gold;
+}
+.left>div{
+    background-color: #d5d7d8;
+    opacity: 0.9;
+    padding-bottom: 5px;
+    border-bottom: 8px double blue;
+}
+#flag{
+height: 30px;
+width: 60;
+}
+select{
+    background-color: antiquewhite;
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    color: darkgreen;
+}
+tr:nth-child(even){
+    background-color: rgb(172, 240, 218);
+}
+td{
+    padding: 3px;
+    border: 1px solid white;
+}
+tr>th{
+    background-color: black;
+    color: #d5d7d8;
+}
+tr:hover{ 
+    font-size: 20px;
+}
+
