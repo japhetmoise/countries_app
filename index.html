@@ -11,6 +11,7 @@
 </head>
 <body>
 <div class="head">
+  <p> <button onclick = "changeMode()" id = "button"> Dark Mode </button></p>
   <h1 class="headtext">
     CountyApp
   </h1>
@@ -38,9 +39,10 @@
   </div>
   </div>
   <div class="right">
+    <p style="text-align: right; padding-right: 20px;">
     <select id="selectRegion" onclick="displayRegion();">      
       <script>setregion();</script>
-    </select>    
+    </select>   </p> 
     <table id="all">
       <thead>
           <tr>

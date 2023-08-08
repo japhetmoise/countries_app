@@ -27,6 +27,11 @@ body{
     width: 300px;
     text-align: center;
 }
+.head>p{
+    float: right;
+    right: 0%;
+    width: fit-content;
+}
 .footer>a{
     text-decoration-line: none;
     color: cyan;
@@ -45,7 +50,7 @@ body{
     overflow: scroll;
     margin-left: 30px;
     float: left;
-    width: 700px;
+    width: 800px;
     height: 400px;
     padding-bottom: 60px;
     bottom: 30px; ;
@@ -59,7 +64,7 @@ table ,td{
 }
 td>img{
     width: 80px;
-    height: 30px;
+    height: 40px;
 }
 td:nth-child(5){
     white-space: nowrap;
@@ -94,6 +99,8 @@ height: 30px;
 width: 60;
 }
 select{
+    position: fixed;
+    float: right;
     background-color: antiquewhite;
     width: 200px;
     height: 30px;
@@ -114,4 +121,18 @@ tr>th{
 tr:hover{ 
     font-size: 20px;
 }
-
+body {
+    color: black;
+    background-color: rgb(241, 241, 241);
+    
+ }
+ .dark-theme {
+    color: white;
+    background-color: rgb(26, 20, 20);
+ }
+  button {    
+    font-size:13px;
+    background-color: rgb(236, 195, 71);
+    border: none;
+    border-radius: 12px;
+ }

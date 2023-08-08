@@ -36,20 +36,30 @@ row.appendChild(capitalcell);
 
 const languagescell=  document.createElement('td');
 const languageset=Object.values(country.languages)
-languagescell.textContent=languageset;
+let alllanguagues="";
+for(let dt of languageset){
+alllanguagues+=dt+" ";
+}
+languagescell.textContent=alllanguagues;
 row.appendChild(languagescell);
 const tldCodescell=  document.createElement('td');
 tldCodescell.textContent=(country.tld);
 row.appendChild(tldCodescell);
 const currencyCodescell=  document.createElement('td');
-let currency=JSON.stringify(country.currencies)
-currency=currency.replace("}","");
-currency=currency.replace("{","");
-currency=currency.replace('"','');
-currencyCodescell.textContent=(currency);
+let currency=(country.currencies);
+ let data= Object.keys(currency); 
+currencyCodescell.innerHTML=data+":"+currency[data].name+"<b> Symbol:</b>"+currency[data].symbol;
 row.appendChild(currencyCodescell);
-const callingCodescell=  document.createElement('td');                           
-callingCodescell.textContent=country.idd.root+country.idd.suffixes;
+const callingCodescell=  document.createElement('td');   
+rt=(country.idd.root);
+                let allidd=""; 
+                let suffixArray= Object.values(country.idd.suffixes); 
+                for(let dt of suffixArray) {
+                  dt=rt+dt;
+                     allidd+=" "+dt;
+                }                   
+
+callingCodescell.textContent=allidd;
 row.appendChild(callingCodescell);
 tableData.appendChild(row);
 }
@@ -74,16 +84,36 @@ async function geSingleCountriesDatata(){
                 document.getElementById("name").textContent=country.name.common;
                 document.getElementById("Capital").textContent=country.capital;
                 const languageset=Object.values(country.languages)
-                document.getElementById("languages").innerHTML=languageset;
+                let alllanguagues="";
+                for(let dt of languageset){
+                alllanguagues+=dt+" ";
+            }
+        
+                document.getElementById("languages").innerHTML=alllanguagues;
                 flagimg=document.getElementById("flag");
                 flagimg.src=country.flags.png;        
                 document.getElementById("Population").innerHTML=country.population;
-                document.getElementById("Region").innerHTML=country.subregion+" / "+country.region;                                         
-                document.getElementById("CallingCode").innerHTML=country.idd.root+country.idd.suffixes;
+                document.getElementById("Region").innerHTML=country.subregion+" / "+country.region;  
+                rt=(country.idd.root);
+                let allidd=""; 
+                let suffixArray= Object.values(country.idd.suffixes); 
+                for(let dt of suffixArray) {
+                  dt=rt+dt;
+                     allidd+=" "+dt;
+                }                                                  
+                document.getElementById("CallingCode").innerHTML=allidd;
                 document.getElementById("TLD").textContent=country.tld;
-                let currency=JSON.stringify(country.currencies)                
-                document.getElementById("currency").textContent=currency;
-                document.getElementById("Neighbour").textContent=country.borders;
+                let currency=(country.currencies)     
+                let property=Object.keys(currency);                              
+                document.getElementById("currency").innerHTML=property+":"
+                +currency[property].name+ "<b> symbol:</b> "+currency[property].symbol;                
+                neibour=(country.borders);
+                let allborder=""; 
+                let borderArray= Object.values(neibour); 
+                for(let dt of borderArray) {
+                  allborder+=" "+dt;
+                }  
+                document.getElementById("Neighbour").textContent=allborder;
 
       }
     }
@@ -131,21 +161,30 @@ row.appendChild(capitalcell);
 
 const languagescell=  document.createElement('td');
 const languageset=Object.values(country.languages)
-languagescell.textContent=languageset;
+let alllanguagues="";
+for(let dt of languageset){
+alllanguagues+=dt+" ";
+}
+languagescell.textContent=alllanguagues;
 row.appendChild(languagescell);
 
 const tldCodescell=  document.createElement('td');
 tldCodescell.textContent=(country.tld);
 row.appendChild(tldCodescell);
 const currencyCodescell=  document.createElement('td');
-let currency=JSON.stringify(country.currencies)
-currency=currency.replace("}","");
-currency=currency.replace("{","");
-currency=currency.replace('"','');
-currencyCodescell.textContent=(currency);
+let currency=(country.currencies);
+let data= Object.keys(currency); 
+currencyCodescell.innerHTML=data+":"+currency[data].name+"<b> Symbol:</b>"+currency[data].symbol;
 row.appendChild(currencyCodescell);
-const callingCodescell=  document.createElement('td');                
-callingCodescell.textContent=country.idd.root+country.idd.suffixes;
+const callingCodescell=  document.createElement('td');    
+rt=(country.idd.root);
+                let allidd=""; 
+                let suffixArray= Object.values(country.idd.suffixes); 
+                for(let dt of suffixArray) {
+                  dt=rt+dt;
+                     allidd+=" "+dt;
+                }                     
+callingCodescell.textContent=allidd;
 row.appendChild(callingCodescell);
 tableData.appendChild(row);
 } 
@@ -172,3 +211,16 @@ function hideregion(){
 function showregion(){
     document.getElementById("RegionTable").style.display="inline";
 }
+
+function changeMode() {
+    var body = document.body;
+    
+    body.classList.toggle("dark-theme");
+    let button = document.getElementById('button');
+    
+    if (button.innerHTML == "Dark Mode") {
+       button.innerHTML = "Dark Mode";
+    } else {
+       button.innerHTML = "Light Mode"
+    }
+ }
