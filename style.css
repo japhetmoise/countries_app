@@ -43,7 +43,7 @@ body{
     float: left;
     background-image: linear-gradient(120deg,rgb(180, 170, 170),#d5d7d8,#dcdca1);
     width: 200px;
-    height:350px ;
+    min-height:350px ;
     padding: 20px;
 }
 .right{
@@ -57,6 +57,7 @@ body{
 }
 table{
     width: 95%;
+    height: fit-content;
 }
 table ,td{
     border-collapse: collapse;
@@ -89,18 +90,17 @@ border: 0px;
     color: gold;
 }
 .left>div{
-    background-color: #d5d7d8;
-    opacity: 0.9;
+    background-color: #e1e3e5;
+    opacity: 0.8;
     padding-bottom: 5px;
     border-bottom: 8px double blue;
+    color: black;
 }
 #flag{
 height: 30px;
 width: 60;
 }
-select{
-    position: fixed;
-    float: right;
+select{ 
     background-color: antiquewhite;
     width: 200px;
     height: 30px;
@@ -108,7 +108,7 @@ select{
     color: darkgreen;
 }
 tr:nth-child(even){
-    background-color: rgb(172, 240, 218);
+    background-color: rgb(156, 169, 165);
 }
 td{
     padding: 3px;
@@ -119,7 +119,7 @@ tr>th{
     color: #d5d7d8;
 }
 tr:hover{ 
-    font-size: 20px;
+    font-size: 18px;
 }
 body {
     color: black;
@@ -135,4 +135,8 @@ body {
     background-color: rgb(236, 195, 71);
     border: none;
     border-radius: 12px;
+ }
+ label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
  }

@@ -15,12 +15,16 @@
   <h1 class="headtext">
     CountyApp
   </h1>
-
+  <p style="text-align: left; padding-right: 20px; position: relative;">
+    <label>Filter with regions</label><br>
+  <select id="selectRegion" onclick="displayRegion();">      
+    <script>setregion();</script>
+  </select>   </p> 
 </div>
 <div class="section">
   <div class="left">
     <div>
-    <input type="text" name="" class="searchInput" placeholder="country name">
+    <input type="text" name="" class="searchInput" placeholder="country name" onchange="displaysingle();"">
     <input type="button" value="Search" class="searchButton" onclick="displaysingle();">
   </div>
   <div>
@@ -38,11 +42,7 @@
     </ul>
   </div>
   </div>
-  <div class="right">
-    <p style="text-align: right; padding-right: 20px;">
-    <select id="selectRegion" onclick="displayRegion();">      
-      <script>setregion();</script>
-    </select>   </p> 
+  <div class="right">   
     <table id="all">
       <thead>
           <tr>
