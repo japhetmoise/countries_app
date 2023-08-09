@@ -17,7 +17,7 @@
   </h1>
   <p style="text-align: left; padding-right: 20px; position: relative;">
     <label>Filter with regions</label><br>
-  <select id="selectRegion" onclick="displayRegion();">      
+  <select id="selectRegion" onchange="displayRegion();">      
     <script>setregion();</script>
   </select>   </p> 
 </div>
@@ -33,7 +33,9 @@
       <li><b>Capital City:</b><span id="Capital"></span></li>
       <li><b>Languages:</b><span id="languages"></span></li>
       <li><b>Flag:</b><image id="flag"></image></li>
+      <li><b>Coat of arm:</b><image id="coat"></image></li>
       <li><b>Population:</b><span id="Population"></span></li>
+      <li><b>Area:</b><span id="area"></span> </li>
       <li><b>Region:</b><span id="Region"></span></li>
       <li><b>Calling Code:</b><span id="CallingCode"></span></li>      
       <li><b>TLD:</b><span id="TLD"></span></li>

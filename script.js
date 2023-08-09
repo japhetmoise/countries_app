@@ -8,7 +8,7 @@ async function getCountriesDatata(){
 async function DisplayData(){    
 const countries=await getCountriesDatata()
 const tableData=document.querySelector(".countries")
-hideregion();
+//hideregion();
 for(let country of countries){
 const row=document.createElement('tr');
 const namecell=  document.createElement('td');
@@ -91,8 +91,11 @@ async function geSingleCountriesDatata(){
         
                 document.getElementById("languages").innerHTML=alllanguagues;
                 flagimg=document.getElementById("flag");
-                flagimg.src=country.flags.png;        
+                flagimg.src=country.flags.png;  
+                flagimg=document.getElementById("coat");
+              flagimg.src=country.coatOfArms.png;      
                 document.getElementById("Population").innerHTML=country.population;
+                document.getElementById("area").innerHTML=`${country.area} `;
                 document.getElementById("Region").innerHTML=country.subregion+" / "+country.region;  
                 rt=(country.idd.root);
                 let allidd=""; 
@@ -111,9 +114,9 @@ async function geSingleCountriesDatata(){
                 let allborder=""; 
                 let borderArray= Object.values(neibour); 
                 for(let dt of borderArray) {
-                  allborder+=" "+dt;
+                  allborder+=`<a href="border.html?/?id=${dt}" >${dt}</a>  `
                 }  
-                document.getElementById("Neighbour").textContent=allborder;
+                document.getElementById("Neighbour").innerHTML= allborder;
 
       }
     }
@@ -224,3 +227,61 @@ function changeMode() {
        button.innerHTML = "Light Mode"
     }
  }
+ function idExtract(){
+  const url=window.location.href;
+  let id=url.substr(-3);
+return id;
+ }
+ function get_borders_url(){
+  const val =idExtract();
+  return `https://restcountries.com/v3.1/alpha/${val}`;
+ }
+ async function getBorderDatata(){
+  const response=await fetch(get_borders_url())
+  const data=await response.json();
+  return data
+}
+
+ async function border_country_details() {        
+          const countries=await getBorderDatata();
+          for(let country of countries){
+              document.getElementById("name").textContent=country.name.common;
+              document.getElementById("Capital").textContent=country.capital;
+              const languageset=Object.values(country.languages)
+              let alllanguagues="";
+              for(let dt of languageset){
+              alllanguagues+=dt+" ";
+          }
+      
+              document.getElementById("languages").innerHTML=alllanguagues;
+              flagimg=document.getElementById("flag");
+              flagimg.src=country.flags.png;
+              flagimg=document.getElementById("coat");
+              flagimg.src=country.coatOfArms.png;
+                      
+              document.getElementById("Population").innerHTML=country.population;
+              document.getElementById("area").innerHTML=`${country.area} km<sup>2</sup>`;
+              document.getElementById("Region").innerHTML=country.subregion+" / "+country.region;  
+              rt=(country.idd.root);
+              let allidd=""; 
+              let suffixArray= Object.values(country.idd.suffixes); 
+              for(let dt of suffixArray) {
+                dt=rt+dt;
+                   allidd+=" "+dt;
+              }                                                  
+              document.getElementById("CallingCode").innerHTML=allidd;
+              document.getElementById("TLD").textContent=country.tld;
+              let currency=(country.currencies)     
+              let property=Object.keys(currency);                              
+              document.getElementById("currency").innerHTML=property+":"
+              +currency[property].name+ "<b> symbol:</b> "+currency[property].symbol;                
+              neibour=(country.borders);
+              let allborder=""; 
+              let borderArray= Object.values(neibour); 
+              for(let dt of borderArray) {
+                allborder+=`<a href="border.html?/?id=${dt}" >${dt}</a>  `
+              }  
+              document.getElementById("Neighbour").innerHTML= allborder;
+
+    }
+  }

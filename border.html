@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/design/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/design/fonts/glyphicons-halflings-regular.svg">
+    <script src="/design/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container jumbotron text-center">
+        <div class="row">
+    <div class="col-sm-2"><p><span class="glyphicon glyphicon-home"></span><a href="index.html">Back to home</a></p></div>
+    
+    <div class="col-sm-10"><h1><span id="name"></span>  details</h1></div>
+   </div></div>
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-3">
+           <span class="img-circle"> <image id="flag" style="width:80%; height: 60%;"></image></span>
+        </div>
+    <div class="col-sm-6" style="padding: 30px;">
+        <ul>          
+          <li><b>Capital City:</b><span id="Capital"></span></li>
+          <li><b>Languages:</b><span id="languages"></span></li>          
+          <li><b>Population:</b><span id="Population"></span></li>
+          <li><b>Area:</b><span id="area"></span></li>
+          <li><b>Region:</b><span id="Region"></span></li>         
+          <li><b>Calling Code:</b><span id="CallingCode"></span></li>      
+          <li><b>TLD:</b><span id="TLD"></span></li>
+          <li><b>Currencies:</b><span id="currency"></span></li>
+          <li><b>Neighbouring countries:</b><span id="Neighbour"></span></li>
+        </ul></div>
+        <div class="col-sm-3">
+            <span class="img-circle"> <image id="coat" style="width:80%; height: 60%;"></image></span>
+         </div>
+      </div></div>
+    <script>
+    border_country_details();
+    </script>
+</body>
+</html>

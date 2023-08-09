@@ -96,9 +96,9 @@ border: 0px;
     border-bottom: 8px double blue;
     color: black;
 }
-#flag{
-height: 30px;
-width: 60;
+#flag,#coat{
+height: 40x;
+width: 70px;
 }
 select{ 
     background-color: antiquewhite;
